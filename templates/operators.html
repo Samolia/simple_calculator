@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Привет, я калькулятор!</h1>
+    <h3 style="color:#ff0900">Что ты хочешь сделать?</h3>
+    <p>
+        {% for operator in operators %}
+            <p>
+                <a href="{% url 'choice of operation' operator %}">{{ operator }}</a>
+            </p>
+        {% endfor %}
+    </p>
+
+{% endblock %}
