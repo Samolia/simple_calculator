@@ -25,7 +25,7 @@ def enter_numbers(requests, selected_operation):
 
 
 def calculate(request, selected_operation):
-    if request.GET['num1'] and request.GET['num2']:
+    if request.GET['num1'].isdigit() and request.GET['num2'].isdigit():
         num1, num2 = int(request.GET['num1']), int(request.GET['num2'])
         if selected_operation in ACTIONS:
             to_do = ACTIONS.get(selected_operation)
