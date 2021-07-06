@@ -12,6 +12,14 @@ ACTIONS = {
 }
 
 
+def is_number(string):
+    try:
+        float(string)
+        return True
+    except ValueError:
+        return False
+
+
 def choice_of_operation(request):
     print(request)
     context = {
@@ -25,8 +33,8 @@ def enter_numbers(requests, selected_operation):
 
 
 def calculate(request, selected_operation):
-    if request.GET['num1'].isdigit() and request.GET['num2'].isdigit():
-        num1, num2 = int(request.GET['num1']), int(request.GET['num2'])
+    if is_number(request.GET['num1']) and is_number(request.GET['num2']):
+        num1, num2 = float(request.GET['num1']), float(request.GET['num2'])
         if selected_operation in ACTIONS:
             to_do = ACTIONS.get(selected_operation)
             if num2 == 0 and to_do == operator.truediv:
