@@ -21,7 +21,6 @@ def is_number(string):
 
 
 def choice_of_operation(request):
-    print(request)
     context = {
         'operators': ACTIONS.keys
     }

@@ -7,7 +7,7 @@
     <p>
         {% for operator in operators %}
             <p>
-                <a href="{% url 'choice of operation' operator %}">{{ operator }}</a>
+                <a href="{% url 'selected_operation' operator %}">{{ operator }}</a>
             </p>
         {% endfor %}
     </p>

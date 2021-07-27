@@ -17,6 +17,4 @@ from django.urls import path, include
 
 urlpatterns = [
     path('', include('app.urls')),
-    path('<selected_operation>/', include('app.urls')),
-    path('result/', include('app.urls'))
 ]
